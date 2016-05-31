@@ -1,7 +1,11 @@
+<script src="data/cities.geojson"></script>
+
 <?php
 script('home', 'script');
 script('home', 'leaflet');
 script('home', 'leaflet-src');
+script('home', 'cities');
+
 
 style('home', 'style');
 style('home', 'leaflet');
