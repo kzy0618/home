@@ -49,7 +49,7 @@
 			window.location.href=url;
 		});
 
-		var promise = $.getJSON("cities.json");
+		var promise = $.getJSON("http://ec2-52-64-29-123.ap-southeast-2.compute.amazonaws.com/apps/home/js/cities.json");
 		  promise.then(function(data) {
 		      //do a bunch of stuff here
 		      console.log(data) // take a look at the data in the console
