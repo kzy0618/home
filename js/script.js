@@ -49,7 +49,7 @@
 			window.location.href=url;
 		});
 
-		var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
+		Window.map = new L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
 		var citiesLayer = L.geoJson(cities).addTo('map');
 		map.fitBounds(citiesLayer.getBounds());
 	});
