@@ -5,8 +5,8 @@
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Shawn, Ahamad <syu702@aucklanduni.ac.nz>
- * @copyright Shawn, Ahamad 2016
+ * @author Shawn, Ahmad <syu702@aucklanduni.ac.nz>
+ * @copyright Shawn, Ahmad 2016
  */
 
 namespace OCA\Home\Controller;
