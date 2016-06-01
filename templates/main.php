@@ -2,7 +2,7 @@
 script('home', 'script');
 script('home', 'leaflet');
 script('home', 'leaflet-src');
-// script('home', 'cities.geojson');
+script('home', 'cities');
 
 
 style('home', 'style');
