@@ -49,14 +49,15 @@
 			window.location.href=url;
 		});
 
-		var promise = $.getJSON("http://ec2-52-64-29-123.ap-southeast-2.compute.amazonaws.com/apps/home/js/cities.geojson");
+		var cities = $.getJSON("http://ec2-52-64-29-123.ap-southeast-2.compute.amazonaws.com/apps/home/js/cities.geojson");
+/*
 		  promise.then(function(data) {
 		      //do a bunch of stuff here
 		      console.log(data) // take a look at the data in the console
 		  });
 
-		Window.map = new L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
-		var citiesLayer = L.geoJson(cities).addTo('map');
+*/		window.map = new L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
+		var citiesLayer = L.geoJson(cities).addTo(document.getElementById('map'));
 		map.fitBounds(citiesLayer.getBounds());
 	});
 
