@@ -24,12 +24,55 @@
 		});
 
     function getCityColor(gn_name){
-      if (gn_name ==="Auckland") {
+            // var colors = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood", "Green", "Blue", "Gray"];
+      /*"Manawatu-Wanganui", 
+      "Gisborne",
+      "Hawke's Bay"
+      "Auckland", 
+      "Bay of Plenty",
+      "Canterbury",
+      "Marlborough",
+      "Nelson",
+      "Tasman",
+      "Northland",
+      "Taranaki",
+      "West Coast",
+      "Otago",
+      "Southland",
+      "Waikato",
+      "Wellington"*/
+      if (gn_name ==="Manawatu-Wanganui") {
+        return "AliceBlue";
+      } else if (gn_name === "Gisborne" ){
+        return "AntiqueWhite";
+      } else if (gn_name === "Hawke's Bay" ){
+        return "Aqua";
+      } else if (gn_name === "Auckland" ){
+        return "Aquamarine";
+      } else if (gn_name === "Bay of Plenty" ){
+        return "Azure";
+      } else if (gn_name === "Canterbury" ){
+        return "Beige";
+      } else if (gn_name === "Marlborough" ){
+        return "Bisque";
+      } else if (gn_name === "Nelson" ){
+        return "Black";
+      } else if (gn_name === "Tasman" ){
+        return "BlanchedAlmond";
+      } else if (gn_name === "Northland" ){
+        return "Blue";
+      } else if (gn_name === "Taranaki" ){
+        return "BlueViolet";
+      } else if (gn_name === "West Coast" ){
+        return "Brown";
+      } else if (gn_name === "Otago" ){
+        return "BurlyWood";
+      } else if (gn_name === "Southland" ){
         return "Green";
+      } else if (gn_name === "Waikato" ){
+        return "Blue";
       } else if (gn_name === "Wellington" ){
-        return "Green";
-      } else {
-        return "gray";
+        return "Gray";
       }
     }
 
@@ -26279,7 +26322,7 @@ var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240]
     var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
     map.fitBounds(citiesLayer.getBounds());
   });
-/*
+
     var legend = L.control({position:'bottomright'});
     legend.onAdd = function (map){
       var div = L.DomUtil.create('div', 'legend');
@@ -26301,15 +26344,31 @@ var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240]
       "Waikato",
       "Wellington"
       ];
-      var colors = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood", "Green", "Blue", "Gray"];
+      var colorValues = [      
+      "Manawatu-Wanganui", 
+      "Gisborne",
+      "Hawke's Bay"
+      "Auckland", 
+      "Bay of Plenty",
+      "Canterbury",
+      "Marlborough",
+      "Nelson",
+      "Tasman",
+      "Northland",
+      "Taranaki",
+      "West Coast",
+      "Otago",
+      "Southland",
+      "Waikato",
+      "Wellington"];
       div.innerHTML = '<div><b>Legend</b></div>';
       for(var i = 0; i<colors.length ; i++){
         div.innerHTML = '<i style = "Background:' 
-        + getCityColor(colors[i]) + '">&nbsp;&nbsp;</i>&nbsp;&nbsp;'
+        + getCityColor(colorValues[i]) + '">&nbsp;&nbsp;</i>&nbsp;&nbsp;'
         + labels[i] + '<br/>'; 
       }
       return div;
     }
       legend.addTo(map);
-*/
+
 })(jQuery, OC);
