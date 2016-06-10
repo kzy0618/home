@@ -25,8 +25,12 @@
 
     function getCityColor(gn_name){
       if (gn_name ==="Auckland") {
-        return "Auckland";
-      } else if (gn_name == )
+        return "Green";
+      } else if (gn_name === "Wellington" ){
+        return "Green";
+      } else {
+        return "gray";
+      }
     }
 
     function citiesStyle(feature){
