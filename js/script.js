@@ -4,8 +4,8 @@
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Ahmad <aalk942@auckland.ac.nz>, Shawn <syu702@aucklanduni.ac.nz> 
- * @copyright Ahmad, Shawn, 2016
+ * @author Ahmad <aalk942@auckland.ac.nz> 
+ * @copyright Ahmad, 2016
  */
 
 (function ($, OC) {
@@ -22,6 +22,25 @@
                         alert(url);
 			window.location.href=url;
 		});
+
+    function getCityColor(gn_name){
+      if (gn_name =="Auckland") {
+        return "Auckland";
+      }
+    }
+
+    function citiesStyle(feature){
+      return {
+        fillColor:getCityColor(feature.properties.gn_name),
+        weight: 2,
+        opacity:1,
+        color: 'white',
+        dashArray: 3,
+        fillOpacity: 0.7
+      }
+    }
+
+
 
 		var cities = [{
   "type": "FeatureCollection",
@@ -26252,7 +26271,7 @@
 		  });
 
 */		var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
-		var citiesLayer = L.geoJson(cities).addTo(map);
+		var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
 		map.fitBounds(citiesLayer.getBounds());
 	});
 
