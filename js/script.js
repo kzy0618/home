@@ -44,11 +44,6 @@
       }
     }
 
-var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
-    var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
-    map.fitBounds(citiesLayer.getBounds());
-  });
-
 		var cities = [{
   "type": "FeatureCollection",
   "features": [
@@ -26279,6 +26274,12 @@ var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240]
 
 */		
 
+
+var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
+    var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
+    map.fitBounds(citiesLayer.getBounds());
+  });
+
     var legend = L.control({position:'bottomright'});
     legend.onAdd = function (map){
       var div = L.DomUtil.create('div', 'legend');
@@ -26310,5 +26311,5 @@ var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240]
       return div;
     }
       legend.addTo(map);
-    
+
 })(jQuery, OC);
