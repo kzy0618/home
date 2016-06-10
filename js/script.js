@@ -44,7 +44,42 @@
       }
     }
 
-
+var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
+    var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
+    map.fitBounds(citiesLayer.getBounds());
+  });
+    var legend = L.control({position:'bottomright'});
+    legend.onAdd = function (map){
+      var div = L.DomUtil.create('div', 'legend');
+      var labels = [
+      "Manawatu-Wanganui", 
+      "Gisborne",
+      "Hawke's Bay"
+      "Auckland", 
+      "Bay of Plenty",
+      "Canterbury",
+      "Marlborough",
+      "Nelson",
+      "Tasman",
+      "Northland",
+      "Taranaki",
+      "West Coast",
+      "Otago",
+      "Southland",
+      "Waikato",
+      "Wellington"
+      ];
+      var colors = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood", "Green", "Blue", "Gray"];
+      div.innerHTML = '<div><b>Legend</b></div>';
+      for(var i = 0; i<colors.length ; i++){
+        div.innerHTML = '<i style = "Background:' 
+        + getCityColor(colors[i]) + "'>&nbsp;&nbsp;</i>&nbsp;&nbsp;'
+        + labels[i] + '<br/>'; 
+      }
+      return div;
+    }
+      legend.addTo(map);
+    
 
 		var cities = [{
   "type": "FeatureCollection",
@@ -26274,9 +26309,5 @@
 		      console.log(data) // take a look at the data in the console
 		  });
 
-*/		var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
-		var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
-		map.fitBounds(citiesLayer.getBounds());
-	});
-
+*/		
 })(jQuery, OC);
