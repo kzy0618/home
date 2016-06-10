@@ -24,9 +24,9 @@
 		});
 
     function getCityColor(gn_name){
-      if (gn_name =="Auckland") {
+      if (gn_name ==="Auckland") {
         return "Auckland";
-      }
+      } else if (gn_name == )
     }
 
     function citiesStyle(feature){
