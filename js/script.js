@@ -73,7 +73,7 @@ var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240]
       div.innerHTML = '<div><b>Legend</b></div>';
       for(var i = 0; i<colors.length ; i++){
         div.innerHTML = '<i style = "Background:' 
-        + getCityColor(colors[i]) + "'>&nbsp;&nbsp;</i>&nbsp;&nbsp;'
+        + getCityColor(colors[i]) + '">&nbsp;&nbsp;</i>&nbsp;&nbsp;'
         + labels[i] + '<br/>'; 
       }
       return div;
