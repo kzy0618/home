@@ -49,6 +49,7 @@
     }
 
     function citiesOnEachFeature (feature, layer){
+      layer.bindLabel(feature.properties.gn_name.toString());
       layer.on(
         {
           mouseover:highlightFeature,
@@ -26357,7 +26358,7 @@
 */		
 
 
-var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 10);
+var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 15);
     citiesLayer = L.geoJson(cities, 
     {
       style: citiesStyle,
