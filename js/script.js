@@ -26358,7 +26358,7 @@
 */		
 
 
-var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
+var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 15);
     citiesLayer = L.geoJson(cities, 
     {
       style: citiesStyle,
