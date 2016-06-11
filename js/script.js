@@ -49,7 +49,7 @@
     }
 
     function citiesOnEachFeature (feature, layer){
-      layer.bindLabel(feature.properties.gn_name.toString(), {noHide: true});
+      layer.bindLabel("City Name Goes here", {noHide: true});
       layer.on(
         {
           mouseover:highlightFeature,
