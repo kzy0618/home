@@ -1,7 +1,7 @@
 <?php
 script('home', 'script');
 script('home', 'leaflet');
-// script('home', 'leaflet-src');
+script('home', 'leaflet-src');
 script('home', 'leaflet.label');
 
 // script('home', 'cities');
