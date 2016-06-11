@@ -23,6 +23,41 @@
 			window.location.href=url;
 		});
 
+    var citiesLayer;
+
+    function highlightFeature (e){
+      var layer = e.target;
+      layer.setStyle(
+          {
+            weight: 5,
+            color: 'Black',
+            fillColor: 'white',
+            fillOpacity:0.2
+          }
+        );
+      if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+      }
+    }   
+
+    function zoomToFeature (e) {
+      map.fitBounds(e.target.getBounds());
+    }
+
+    function citiesOnEachFeature (feature, layer){
+      layer.on(
+        {
+          mouseover:highlightFeature,
+          mouseout: resetHighlight,
+          click: zoomToFeature
+        }
+      );
+    }
+
+    function resetHighlight(e) {
+        citiesLayer.resetStyle(e.target);
+    }
+
     function getCityColor(gn_name){
             // var colors = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood", "Green", "Blue", "Gray"];
       /*"Manawatu-Wanganui", 
@@ -78,7 +113,7 @@
 
     function citiesStyle(feature){
       return {
-        fillColor:getCityColor(feature.properties.gn_name),
+        fillColor: 'green'/*getCityColor(feature.properties.gn_name)*/,
         weight: 2,
         opacity:1,
         color: 'white',
@@ -26319,7 +26354,13 @@
 
 
 var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
-    var citiesLayer = L.geoJson(cities, {style: citiesStyle}).addTo(map);
+    citiesLayer = L.geoJson(cities, 
+    {
+      style: citiesStyle,
+      onEachFeature: citiesOnEachFeature
+    }
+
+    ).addTo(map);
     map.fitBounds(citiesLayer.getBounds());
   });
 /*
