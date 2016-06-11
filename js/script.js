@@ -29,7 +29,7 @@
       var layer = e.target;
       layer.setStyle(
           {
-            weight: 3,
+            weight: 4,
             color: 'Black',
             fillColor: 'white',
             fillOpacity:0.2
@@ -42,6 +42,10 @@
 
     function zoomToFeature (e) {
       map.fitBounds(e.target.getBounds());
+    }
+
+    function clickToListen(){
+      //this function can be created to play a random voice everytime a city has been clicked
     }
 
     function citiesOnEachFeature (feature, layer){
