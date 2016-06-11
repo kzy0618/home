@@ -29,7 +29,7 @@
       var layer = e.target;
       layer.setStyle(
           {
-            weight: 5,
+            weight: 3,
             color: 'Black',
             fillColor: 'white',
             fillOpacity:0.2
@@ -26353,7 +26353,7 @@
 */		
 
 
-var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 13);
+var map = L.map(document.getElementById('map')).setView([-36.853904, 174.767240], 12);
     citiesLayer = L.geoJson(cities, 
     {
       style: citiesStyle,
