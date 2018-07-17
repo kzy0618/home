@@ -27,5 +27,5 @@ style('home', 'leaflet.label');
 <?php
 // custom scripts
 script('home', 'script');
-script('home', 'initMap');
+// script('home', 'initMap'); // For testing purpose only, NOT NEEDED FOR PRODUCTION, PRODUCTION CODES GO INSIDE SCRIPT.JS
 ?>
