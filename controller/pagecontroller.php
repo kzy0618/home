@@ -11,6 +11,7 @@
 
 namespace OCA\Home\Controller;
 
+use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
@@ -39,6 +40,12 @@ class PageController extends Controller {
 	 */
 	public function index() {
 		$params = ['user' => $this->userId];
-		return new TemplateResponse('home', 'main', $params);  // templates/main.php
+        $csp = new ContentSecurityPolicy();
+        // Allows to access resources from a specific domain. Use * to allow everything from all domains.
+        // here we allow ALL Javascript, images, styles, and fonts from ALL domains. Otherwise, Google Map will not be properly rendered.
+        $csp->addAllowedScriptDomain("*")->addAllowedImageDomain("*")->addAllowedStyleDomain("*")->addAllowedFontDomain("*");
+		$response = new TemplateResponse('home', 'main', $params);  // templates/main.php
+        $response->setContentSecurityPolicy($csp);
+        return $response;
 	}
 }

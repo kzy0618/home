@@ -4,8 +4,8 @@
     <name>Home</name>
     <description>The default homepage</description>
     <licence>AGPL</licence>
-    <author>Shawn, Ahamad</author>
-    <version>0.0.1</version>
+    <author>Shawn, Ahamad, Jonathan, Mason</author>
+    <version>0.0.4</version>
     <namespace>Home</namespace>
     <category>other</category>
     <dependencies>
