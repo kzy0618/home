@@ -79,7 +79,7 @@ class DbHandler extends Mapper
             return $row['path']; // internal path
         } else {
             // check if the input id is valid
-            $checkIfIDValid = "SELECT COUNT(NULL) FROM oc_recorder_recordings WHERE id = ?";
+            $checkIfIDValid = "SELECT COUNT(*) FROM oc_recorder_recordings WHERE id = ?";
             $count = $this->execute($checkIfIDValid, [$id])->fetchColumn();
             if ($count == 0) {
                 return "deleted"; // not a valid pk
