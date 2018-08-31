@@ -5,7 +5,7 @@
     <description>The default homepage</description>
     <licence>AGPL</licence>
     <author>Shawn, Ahamad, Jonathan, Mason</author>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <namespace>Home</namespace>
     <category>other</category>
     <dependencies>

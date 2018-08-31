@@ -117,4 +117,14 @@ class DbHandler extends Mapper
         return $numberOfRows;
     }
 
+    public function deleteFileRowInFilecacheByName($name) {
+        $sql = "DELETE FROM oc_filecache WHERE name = ?";
+        $this->execute($sql, [$name]);
+    }
+
+    public function deleteFileRowInFileTrashBinByName($name) {
+        $sql = "DELETE FROM oc_files_trash WHERE id = ?";
+        $this->execute($sql, [$name]);
+    }
+
 }

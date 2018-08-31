@@ -21,6 +21,7 @@ return [
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
         ['name' => 'map#getRecordings', 'url' => '/recordings', 'verb' => 'GET'],
-        ['name' => 'map#download', 'url' => '/download/{id}', 'verb' => 'GET']
+        ['name' => 'map#download', 'url' => '/download/{id}', 'verb' => 'GET'],
+        ['name' => 'map#downloadAudioOnly', 'url' => '/download-audio-only/{id}', 'verb' => 'GET']
     ]
 ];
