@@ -1,14 +1,14 @@
 <?php
-script('home', 'leaflet');
-script('home', 'leaflet-src');
-script('home', 'leaflet.label');
-
-// script('home', 'cities');
-
-
+//script('home', 'leaflet');
+//script('home', 'leaflet-src');
+//script('home', 'leaflet.label');
+//
+//// script('home', 'cities');
+//
 style('home', 'style');
-style('home', 'leaflet');
-style('home', 'leaflet.label');
+script('home', 'markerclusterer');
+//style('home', 'leaflet');
+//style('home', 'leaflet.label');
 
 
 ?>
@@ -21,6 +21,11 @@ style('home', 'leaflet.label');
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1W9m44Rv3qXbCDJ3PqhUXtRvsdnJ80oM&callback=initMap">
     </script>
+
+<!--	// TODO : Change the path to specify the location where you have saved the same file.-->
+<!--	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>-->
+
+	<?php print_unescaped($this->inc('part.content'))?>
     <!--     <button id="login">Login</button> code from old home, no clue -->
 </div>
 
