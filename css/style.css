@@ -11,3 +11,13 @@
 #hello {
 	color: red;
 }
+
+a:hover{
+	color: blue;
+	text-decoration: underline;
+}
+
+.popUpContent.scroll{
+	border-bottom: 2px solid black;
+	margin-bottom: 5px;
+}

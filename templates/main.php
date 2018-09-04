@@ -6,6 +6,7 @@
 //// script('home', 'cities');
 //
 style('home', 'style');
+style('home', 'scrollbar');
 script('home', 'markerclusterer');
 //style('home', 'leaflet');
 //style('home', 'leaflet.label');
