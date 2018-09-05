@@ -159,7 +159,7 @@ class MapController extends Controller
      * @throws \Exception
      */
     public function bulkDownload(array $idsToDownload){
-        $owncloudDataRoot = "/var/www/owncloud/data";
+        $owncloudDataRoot = "/var/www/p4/owncloud/data";
         /** @noinspection PhpUndefinedClassInspection */
         $folder = \OC::$server->getUserFolder('Frenchalexia');
         $folderPath = $folder->getPath();
